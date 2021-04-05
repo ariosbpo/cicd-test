@@ -10,7 +10,7 @@ pipeline {
   stages {
     stage('Github') {
       steps {
-        git(url: 'https://github.com/ariosbpo/apigee-cicd-test.git', branch: 'main', changelog: true, credentialsId: 'github')
+        git(url: 'https://github.com/ariosbpo/cicd-test.git', branch: 'main', changelog: true, credentialsId: 'github')
       }
     }
 

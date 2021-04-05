@@ -16,7 +16,7 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        sh '''cd $HOME/workspace/apigee_projects/cicd-test
+        sh '''cd /home/near-bpo/workspace/apigee_projects/cicd-test
 mvn install -P test -Dusername=arios@nearbpo.com -Dpassword=K0koniirukar@bpo'''
       }
     }

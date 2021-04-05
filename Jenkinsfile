@@ -3,20 +3,20 @@ pipeline {
   agent {
     docker {
       image 'maven:3-alpine'
-      args '-v /root/.m2:/root/.m2'
+      args '-v $HOME/.m2:/root/.m2'
     }
 
   }
   stages {
     stage('Github') {
       steps {
-        git(url: 'https://github.com/AlanMalagon/apigee-cicd-test.git', branch: 'main', changelog: true, credentialsId: 'github')
+        git(url: 'https://github.com/ariosbpo/apigee-cicd-test.git', branch: 'main', changelog: true, credentialsId: 'github')
       }
     }
 
     stage('Deploy') {
       steps {
-        sh '''cd src/gateway/test-app/
+        sh '''cd $HOME/workspace/apigee_projects/cicd-test
 mvn install -P test -Dusername=arios@nearbpo.com -Dpassword=K0koniirukar@bpo'''
       }
     }

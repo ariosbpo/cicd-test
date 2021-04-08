@@ -1,4 +1,4 @@
-//jenkins_access_token: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
+//jenkins_access_token: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
 pipeline {
   agent {
     docker {
@@ -18,7 +18,7 @@ pipeline {
       steps {
 	//sh '''pwd'''
         sh '''cd MoquitoProxy/Moquito-v1/
-	   mvn install -P test -Dusername=arios@nearbpo.com -Dpassword=K0koniirukar@bpo'''
+	   mvn install -P test -Dusername=arios@nearbpo.com -Dpassword=K0koniirukar@edg'''
       }
     }
 
